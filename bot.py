@@ -761,7 +761,6 @@ async def on_ready():
         for role in guild.roles:
             guild_role_cache[(guild.id, role.id)] = role
 
-    bot.add_view(GiveawayView("dummy"))  # view callbacks are custom-ID independent here
     print(f"Logged in as {bot.user} ({bot.user.id})")
 
     try:
