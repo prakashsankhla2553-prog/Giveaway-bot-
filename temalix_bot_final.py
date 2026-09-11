@@ -498,6 +498,21 @@ async def timer_loop():
         except Exception as e:
             print("Timer error:", repr(e))
         await asyncio.sleep(15)
+# -------------------- Bot --------------------
+
+intents = discord.Intents.default()
+intents.guilds = True
+intents.members = True
+intents.message_content = True
+
+bot = commands.Bot(
+    command_prefix=PREFIX,
+    intents=intents,
+    help_command=None
+)
+
+slash_synced = False
+started_views = False
 
 # -------------------- Invite tracking --------------------
 
@@ -536,17 +551,6 @@ async def on_member_join(member):
                 break
     except Exception as e:
         print("Invite tracking error:", repr(e))
-
-# -------------------- Bot --------------------
-
-intents = discord.Intents.default()
-intents.guilds = True
-intents.members = True
-intents.message_content = True
-
-bot = commands.Bot(command_prefix=PREFIX, intents=intents, help_command=None)
-slash_synced = False
-started_views = False
 
 @bot.event
 async def on_ready():
