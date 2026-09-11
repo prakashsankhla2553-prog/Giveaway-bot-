@@ -852,3 +852,5 @@ async def create_giveaway(ctx, prize: str, winners: int, duration: str):
         embed=giveaway_embed(gw),
         view=GiveawayView(gw_id)
     )
+
+bot.run(TOKEN)
