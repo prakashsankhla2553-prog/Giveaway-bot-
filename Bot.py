@@ -964,3 +964,5 @@ async def create_giveaway(
         },
 
         "claim
+
+bot.run(TOKEN)
